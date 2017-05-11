@@ -121,7 +121,7 @@ public class MBarView extends RelativeLayout implements NetWorkListener {
                 binding.setModel(getData(position));
             }
         });
-        recyclerView.setBackgroundColor(bar.bgColorBar);
+        recyclerView.setBackgroundColor(bar.getBgColorMore());
         if (alpha <= 0) {
             alpha = 0.8f;
         }

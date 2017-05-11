@@ -25,13 +25,13 @@ public class Bar extends BaseModel {
         moreList = new ArrayList<>();
     }
 
-    public int bgColorBar;
-    public int bgColorMore;
-    public Activity activity;
-    public Menu left;
-    public Menu middle;
-    public Menu right1;
-    public Menu right2;
+    private int bgColorBar;
+    private int bgColorMore;
+    private Activity activity;
+    private Menu left;
+    private Menu middle;
+    private Menu right1;
+    private Menu right2;
     private ArrayList<Menu> moreList;
 
     private void check() {
@@ -93,33 +93,33 @@ public class Bar extends BaseModel {
         return activity;
     }
 
-//    public Menu getLeft() {
-//        return left;
-//    }
-//
-//    public Menu getMiddle() {
-//        return middle;
-//    }
-//
-//    public Menu getRight1() {
-//        return right1;
-//    }
-//
-//    public Menu getRight2() {
-//        return right2;
-//    }
+    public Menu getLeft() {
+        return left;
+    }
+
+    public Menu getMiddle() {
+        return middle;
+    }
+
+    public Menu getRight1() {
+        return right1;
+    }
+
+    public Menu getRight2() {
+        return right2;
+    }
 
     public ArrayList<Menu> getMoreList() {
         return moreList;
     }
 
-//    public int getBgColorBar() {
-//        return bgColorBar;
-//    }
-//
-//    public int getBgColorMore() {
-//        return bgColorMore;
-//    }
+    public int getBgColorBar() {
+        return bgColorBar;
+    }
+
+    public int getBgColorMore() {
+        return bgColorMore;
+    }
 
     public static class Builder {
 
@@ -136,8 +136,8 @@ public class Bar extends BaseModel {
         public Bar build() {
             save();
             barVo.check();
-            if (barVo.getActivity() != null && barVo.left.listener == null) {
-                barVo.left.listener(new MenuListener() {
+            if (barVo.getActivity() != null && barVo.getLeft().getListener() == null) {
+                barVo.getLeft().listener(new MenuListener() {
                     @Override
                     public void onClickMenu(Menu menuVo) {
                         barVo.getActivity().onBackPressed();

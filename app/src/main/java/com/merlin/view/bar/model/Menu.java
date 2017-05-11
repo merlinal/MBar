@@ -12,25 +12,25 @@ public class Menu extends BaseModel {
     private Menu() {
     }
 
-    public long id;
+    private long id;
 
-    public int type;
-    public int bgColor;
+    private int type;
+    private int bgColor;
 
-    public String text;
-    public int textColor;
-    public float textSize;
+    private String text;
+    private int textColor;
+    private float textSize;
 
-    public String desc;
-    public int descColor;
-    public float descSize;
+    private String desc;
+    private int descColor;
+    private float descSize;
 
-    public int iconId;
+    private int iconId;
 
-    public boolean isNotice;
-    public String notice;
+    private boolean isNotice;
+    private String notice;
 
-    public MenuListener listener;
+    private MenuListener listener;
 
 
     public static Menu newInst() {
@@ -120,56 +120,56 @@ public class Menu extends BaseModel {
         return this;
     }
 
-//    public int getType() {
-//        return type;
-//    }
-//
-//    public int getBgColor() {
-//        return bgColor;
-//    }
-//
-//    public int getTextColor() {
-//        return textColor;
-//    }
-//
-//    public float getTextSize() {
-//        return textSize;
-//    }
-//
-//    public int getDescColor() {
-//        return descColor;
-//    }
-//
-//    public float getDescSize() {
-//        return descSize;
-//    }
-//
-//    public int getIconId() {
-//        return iconId;
-//    }
-//
-//    public boolean isNotice() {
-//        return isNotice;
-//    }
-//
-//    public String getNotice() {
-//        return notice;
-//    }
-//
-//    public MenuListener getListener() {
-//        return listener;
-//    }
-//
-//    public String getText() {
-//        return text;
-//    }
+    public int getType() {
+        return type;
+    }
+
+    public int getBgColor() {
+        return bgColor;
+    }
+
+    public int getTextColor() {
+        return textColor;
+    }
+
+    public float getTextSize() {
+        return textSize;
+    }
+
+    public int getDescColor() {
+        return descColor;
+    }
+
+    public float getDescSize() {
+        return descSize;
+    }
+
+    public int getIconId() {
+        return iconId;
+    }
+
+    public boolean isNotice() {
+        return isNotice;
+    }
+
+    public String getNotice() {
+        return notice;
+    }
+
+    public MenuListener getListener() {
+        return listener;
+    }
+
+    public String getText() {
+        return text;
+    }
 
     public void setText(String text) {
         this.text = text;
     }
-//
-//    public String getDesc() {
-//        return desc;
-//    }
+
+    public String getDesc() {
+        return desc;
+    }
 
 }
