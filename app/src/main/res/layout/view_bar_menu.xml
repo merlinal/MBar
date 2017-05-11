@@ -65,7 +65,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_notice_number"
             android:gravity="center"
-            android:visibility="@{model.isNotice() &amp;&amp; ValiUtil.isBlank(model.notice) ? View.VISIBLE : View.GONE}" />
+            android:visibility="@{model.isNotice &amp;&amp; ValiUtil.isBlank(model.notice) ? View.VISIBLE : View.GONE}" />
 
         <TextView
             android:layout_width="14dp"
@@ -77,7 +77,7 @@
             android:text="@{model.notice}"
             android:textColor="@color/light"
             android:textSize="6sp"
-            android:visibility="@{model.isNotice() &amp;&amp; !ValiUtil.isBlank(model.notice) ? View.VISIBLE : View.GONE}" />
+            android:visibility="@{model.isNotice &amp;&amp; !ValiUtil.isBlank(model.notice) ? View.VISIBLE : View.GONE}" />
     </LinearLayout>
 
 </layout>
