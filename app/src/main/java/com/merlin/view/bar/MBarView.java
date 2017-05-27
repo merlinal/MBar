@@ -66,6 +66,10 @@ public class MBarView extends RelativeLayout implements NetWorkListener {
         binding.setModel(bar);
     }
 
+    public Bar model() {
+        return bar;
+    }
+
     public void showMoreTopRight() {
         showMore(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT,
                 0, getBottom(), Gravity.TOP | Gravity.RIGHT, true, 0);

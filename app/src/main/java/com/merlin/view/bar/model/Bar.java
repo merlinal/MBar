@@ -89,7 +89,7 @@ public class Bar extends BaseModel {
         this.bgColorMore = bgColorMore;
     }
 
-    public Activity getActivity() {
+    private Activity getActivity() {
         return activity;
     }
 
