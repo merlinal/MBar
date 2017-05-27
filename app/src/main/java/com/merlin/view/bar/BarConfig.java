@@ -44,11 +44,7 @@ public class BarConfig {
     }
 
     public int getBgColorBar() {
-        int color = getConfig().bgColorBar();
-        if (color == 0) {
-            color = Util.colorPrimary();
-        }
-        return color;
+        return getConfig().bgColorBar();
     }
 
     public int getBgColorMore() {
@@ -92,7 +88,7 @@ public class BarConfig {
 
             @Override
             public int bgColorBar() {
-                return Util.colorPrimary();
+                return Util.color(R.color.primary);
             }
 
             @Override
