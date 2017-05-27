@@ -12,7 +12,6 @@
     <com.merlin.view.bar.MBarView
         android:id="@+id/mBarView"
         style="@style/topBar"
-        android:layout_height="wrap_content"
         android:background="@{model.bgColorBar}">
 
         <include
