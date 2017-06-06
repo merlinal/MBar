@@ -86,7 +86,7 @@ public class MBarView extends RelativeLayout implements NetWorkListener {
     }
 
     public void hideMore() {
-        if (moreDialog == null && moreDialog.isShowing()) {
+        if (moreDialog != null && moreDialog.isShowing()) {
             moreDialog.dismiss();
         }
     }
@@ -112,6 +112,7 @@ public class MBarView extends RelativeLayout implements NetWorkListener {
 
     private View getMenuMoreView(float alpha) {
         MRecyclerView recyclerView = new MRecyclerView(getContext());
+        recyclerView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         recyclerView.set(MRecyclerView.MODE_LIST, LinearLayoutManager.VERTICAL, 0, Util.dp2px(1), 0, 0, 0xffffffff);
         recyclerView.setAdapter(new AbstractRecyclerAdapter<Menu>(bar.getMoreList()) {
             @Override
@@ -126,10 +127,7 @@ public class MBarView extends RelativeLayout implements NetWorkListener {
             }
         });
         recyclerView.setBackgroundColor(bar.getBgColorMore());
-        if (alpha <= 0) {
-            alpha = 0.8f;
-        }
-        recyclerView.setAlpha(alpha);
+        recyclerView.setAlpha(alpha <= 0 ? 0.8f : alpha);
         return recyclerView;
     }
 
