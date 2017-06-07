@@ -18,7 +18,7 @@
             android:id="@+id/view_bar_left"
             layout="@layout/view_bar_menu"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_centerVertical="true"
             bind:model="@{model.left}" />
 
@@ -26,7 +26,7 @@
             android:id="@+id/view_bar_middle"
             layout="@layout/view_bar_menu"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_centerInParent="true"
             bind:model="@{model.middle}" />
 
@@ -34,7 +34,7 @@
             android:id="@+id/view_bar_right1"
             layout="@layout/view_bar_menu"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             bind:model="@{model.right1}" />
@@ -43,7 +43,7 @@
             android:id="@+id/view_bar_right2"
             layout="@layout/view_bar_menu"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/view_bar_right1"
             bind:model="@{model.right2}" />
