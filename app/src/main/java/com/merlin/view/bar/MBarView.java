@@ -124,6 +124,7 @@ public class MBarView extends RelativeLayout implements NetWorkListener {
             public void onBindViewHolder(RecyclerViewHolder holder, int position) {
                 ViewBarMenuBinding binding = (ViewBarMenuBinding) holder.getBinding();
                 binding.setModel(getData(position));
+                binding.executePendingBindings();
             }
         });
         recyclerView.setBackgroundColor(bar.getBgColorMore());
