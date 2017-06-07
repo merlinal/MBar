@@ -168,10 +168,6 @@ public class Menu extends BaseModel {
         return text;
     }
 
-    public void setText(String text) {
-        this.text = text;
-    }
-
     public String getDesc() {
         return desc;
     }

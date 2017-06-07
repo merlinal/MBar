@@ -53,7 +53,7 @@ public class Bar extends BaseModel {
     }
 
     public void setTitle(String title) {
-        middle.setText(title);
+        middle.text(title);
         middle.notifyChange();
     }
 
@@ -195,8 +195,8 @@ public class Bar extends BaseModel {
             return this;
         }
 
-        public Builder right1(long id) {
-            switchType(Bar.TYPE_RIGHT1).set(id);
+        public Builder right1(long id, int iconId, MenuListener listener) {
+            switchType(Bar.TYPE_RIGHT1).set(iconId, null).set(listener).set(id);
             return this;
         }
 
@@ -210,8 +210,8 @@ public class Bar extends BaseModel {
             return this;
         }
 
-        public Builder right2(long id) {
-            switchType(Bar.TYPE_RIGHT2).set(id);
+        public Builder right2(long id, int iconId, MenuListener listener) {
+            switchType(Bar.TYPE_RIGHT2).set(iconId, null).set(listener).set(id);
             return this;
         }
 
