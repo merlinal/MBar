@@ -52,7 +52,7 @@ public class Bar extends BaseModel {
         }
     }
 
-    public void setTitle(String title){
+    public void setTitle(String title) {
         middle.setText(title);
         middle.notifyChange();
     }
@@ -107,6 +107,13 @@ public class Bar extends BaseModel {
 
     public Menu getRight2() {
         return right2;
+    }
+
+    public Menu getMore(int index) {
+        if (moreList != null && index > -1 && index < moreList.size()) {
+            return moreList.get(index);
+        }
+        return null;
     }
 
     public ArrayList<Menu> getMoreList() {

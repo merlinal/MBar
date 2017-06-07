@@ -120,6 +120,10 @@ public class Menu extends BaseModel {
         return this;
     }
 
+    public long getId() {
+        return id;
+    }
+
     public int getType() {
         return type;
     }
