@@ -2,51 +2,51 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:bind="http://schemas.android.com/apk/res-auto">
 
-    <!--<data>-->
+    <data>
 
-        <!--<variable-->
-            <!--name="model"-->
-            <!--type="com.merlin.view.bar.model.Bar" />-->
-    <!--</data>-->
+        <variable
+            name="model"
+            type="com.merlin.view.bar.model.Bar" />
+    </data>
 
-    <!--<com.merlin.view.bar.MBarView-->
-        <!--android:id="@+id/mBarView"-->
-        <!--style="@style/topBar"-->
-        <!--android:background="@{model.bgColorBar}">-->
+    <com.merlin.view.bar.MBarView
+        android:id="@+id/mBarView"
+        style="@style/topBar"
+        android:background="@{model.bgColorBar}">
 
-        <!--<include-->
-            <!--android:id="@+id/view_bar_left"-->
-            <!--layout="@layout/view_bar_menu"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--bind:model="@{model.left}" />-->
+        <include
+            android:id="@+id/view_bar_left"
+            layout="@layout/view_bar_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            bind:model="@{model.left}" />
 
-        <!--<include-->
-            <!--android:id="@+id/view_bar_middle"-->
-            <!--layout="@layout/view_bar_menu"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_centerInParent="true"-->
-            <!--bind:model="@{model.middle}" />-->
+        <include
+            android:id="@+id/view_bar_middle"
+            layout="@layout/view_bar_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            bind:model="@{model.middle}" />
 
-        <!--<include-->
-            <!--android:id="@+id/view_bar_right1"-->
-            <!--layout="@layout/view_bar_menu"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_alignParentRight="true"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--bind:model="@{model.right1}" />-->
+        <include
+            android:id="@+id/view_bar_right1"
+            layout="@layout/view_bar_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            bind:model="@{model.right1}" />
 
-        <!--<include-->
-            <!--android:id="@+id/view_bar_right2"-->
-            <!--layout="@layout/view_bar_menu"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_toLeftOf="@+id/view_bar_right1"-->
-            <!--bind:model="@{model.right2}" />-->
-    <!--</com.merlin.view.bar.MBarView>-->
+        <include
+            android:id="@+id/view_bar_right2"
+            layout="@layout/view_bar_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/view_bar_right1"
+            bind:model="@{model.right2}" />
+    </com.merlin.view.bar.MBarView>
 
 </layout>

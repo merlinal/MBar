@@ -1,83 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!--<data>-->
+    <data>
 
-        <!--<import type="android.view.View" />-->
+        <import type="android.view.View" />
 
-        <!--<import type="com.merlin.core.util.ValiUtil" />-->
+        <import type="com.merlin.core.util.ValiUtil" />
 
-        <!--<variable-->
-            <!--name="model"-->
-            <!--type="com.merlin.view.bar.model.Menu" />-->
-    <!--</data>-->
+        <variable
+            name="model"
+            type="com.merlin.view.bar.model.Menu" />
+    </data>
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:background="?android:attr/selectableItemBackground"-->
-        <!--android:minHeight="32dp"-->
-        <!--android:onClick="@{(view) -> model.listener.onClickMenu(model)}"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:paddingLeft="8dp"-->
-        <!--android:paddingRight="8dp">-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/selectableItemBackground"
+        android:minHeight="32dp"
+        android:onClick="@{(view) -> model.listener.onClickMenu(model)}"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
 
-        <!--<ImageView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="center_vertical"-->
-            <!--android:src="@{model.iconId}" />-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@{model.iconId}" />
 
-        <!--<LinearLayout-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="center_vertical"-->
-            <!--android:gravity="center_horizontal"-->
-            <!--android:orientation="vertical"-->
-            <!--android:paddingBottom="4dp"-->
-            <!--android:paddingLeft="4dp"-->
-            <!--android:paddingRight="4dp"-->
-            <!--android:paddingTop="4dp">-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="4dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingTop="4dp">
 
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="@{model.text}"-->
-                <!--android:textColor="@{model.textColor}"-->
-                <!--android:textSize="@{model.textSize}"-->
-                <!--android:visibility="@{ValiUtil.isBlank(model.text) ? View.GONE : View.VISIBLE}" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.text}"
+                android:textColor="@{model.textColor}"
+                android:textSize="@{model.textSize}"
+                android:visibility="@{ValiUtil.isBlank(model.text) ? View.GONE : View.VISIBLE}" />
 
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:minWidth="48dp"-->
-                <!--android:text="@{model.desc}"-->
-                <!--android:textColor="@{model.descColor}"-->
-                <!--android:textSize="@{model.descSize}"-->
-                <!--android:visibility="@{ValiUtil.isBlank(model.desc) ? View.GONE : View.VISIBLE}" />-->
-        <!--</LinearLayout>-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="48dp"
+                android:text="@{model.desc}"
+                android:textColor="@{model.descColor}"
+                android:textSize="@{model.descSize}"
+                android:visibility="@{ValiUtil.isBlank(model.desc) ? View.GONE : View.VISIBLE}" />
+        </LinearLayout>
 
-        <!--<ImageView-->
-            <!--android:layout_width="8dp"-->
-            <!--android:layout_height="8dp"-->
-            <!--android:layout_marginLeft="2dp"-->
-            <!--android:layout_marginRight="8dp"-->
-            <!--android:layout_marginTop="8dp"-->
-            <!--android:background="@drawable/bg_notice_number"-->
-            <!--android:gravity="center"-->
-            <!--android:visibility="@{model.isNotice() &amp;&amp; ValiUtil.isBlank(model.notice) ? View.VISIBLE : View.GONE}" />-->
+        <ImageView
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_notice_number"
+            android:gravity="center"
+            android:visibility="@{model.isNotice() &amp;&amp; ValiUtil.isBlank(model.notice) ? View.VISIBLE : View.GONE}" />
 
-        <!--<TextView-->
-            <!--android:layout_width="14dp"-->
-            <!--android:layout_height="14dp"-->
-            <!--android:layout_marginRight="2dp"-->
-            <!--android:layout_marginTop="2dp"-->
-            <!--android:background="@drawable/bg_notice_number"-->
-            <!--android:gravity="center"-->
-            <!--android:text="@{model.notice}"-->
-            <!--android:textColor="@color/light"-->
-            <!--android:textSize="6sp"-->
-            <!--android:visibility="@{model.isNotice() &amp;&amp; !ValiUtil.isBlank(model.notice) ? View.VISIBLE : View.GONE}" />-->
-    <!--</LinearLayout>-->
+        <TextView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/bg_notice_number"
+            android:gravity="center"
+            android:text="@{model.notice}"
+            android:textColor="@color/light"
+            android:textSize="6sp"
+            android:visibility="@{model.isNotice() &amp;&amp; !ValiUtil.isBlank(model.notice) ? View.VISIBLE : View.GONE}" />
+    </LinearLayout>
 
 </layout>
