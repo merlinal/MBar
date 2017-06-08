@@ -112,7 +112,7 @@ public class MBarView extends RelativeLayout implements NetWorkListener {
 
     private View getMenuMoreView(float alpha) {
         MRecyclerView recyclerView = new MRecyclerView(getContext());
-//        recyclerView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        recyclerView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         recyclerView.set(MRecyclerView.MODE_LIST, LinearLayoutManager.VERTICAL, 0, Util.dp2px(1), 0, 0, 0xffffffff);
         recyclerView.setAdapter(new AbstractRecyclerAdapter<Menu>(bar.getMoreList()) {
             @Override
