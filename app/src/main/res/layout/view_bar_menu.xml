@@ -17,11 +17,10 @@
         android:layout_height="match_parent"
         android:background="?android:attr/selectableItemBackground"
         android:minHeight="32dp"
+        android:onClick="@{(view) -> model.listener.onClickMenu(model)}"
         android:orientation="horizontal"
         android:paddingLeft="8dp"
         android:paddingRight="8dp">
-
-        <!--android:onClick="@{(view) -> model.listener.onClickMenu(model)}"-->
 
         <ImageView
             android:layout_width="wrap_content"
