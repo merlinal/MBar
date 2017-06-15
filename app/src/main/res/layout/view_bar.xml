@@ -11,8 +11,8 @@
 
     <com.merlin.view.bar.MBarView
         android:id="@+id/mBarView"
-        style="@style/topBar"
-        android:background="@{model.bgColorBar}">
+        style="@style/topBar">
+        <!--android:background="@{model.bgColorBar}">-->
 
         <include
             android:id="@+id/view_bar_left"
