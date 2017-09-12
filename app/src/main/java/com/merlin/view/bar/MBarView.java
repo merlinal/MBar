@@ -23,9 +23,10 @@ import com.merlin.view.bar.databinding.ViewBarBinding;
 import com.merlin.view.bar.databinding.ViewBarMenuBinding;
 import com.merlin.view.bar.model.Bar;
 import com.merlin.view.bar.model.Menu;
-import com.merlin.view.recycler.AbstractRecyclerAdapter;
 import com.merlin.view.recycler.MRecyclerView;
 import com.merlin.view.recycler.RecyclerViewHolder;
+import com.merlin.view.recycler.adapter.OnBindDataListener;
+import com.merlin.view.recycler.adapter.RecyclerAdapter;
 
 /**
  * Created by ncm on 2017/4/12.
@@ -114,22 +115,23 @@ public class MBarView extends RelativeLayout implements NetWorkListener {
         MRecyclerView recyclerView = new MRecyclerView(getContext());
         recyclerView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         recyclerView.set(MRecyclerView.MODE_LIST, LinearLayoutManager.VERTICAL, 0, Util.dp2px(1), 0, 0, 0xffffffff);
-        recyclerView.setAdapter(new AbstractRecyclerAdapter<Menu>(bar.getMoreList()) {
-            @Override
-            public ViewDataBinding getItemBinding(ViewGroup parent, int viewType) {
-                return DataBindingUtil.inflate(Util.inflater(), R.layout.view_bar_menu, parent, false);
-            }
 
-            @Override
-            public void onBindViewHolder(RecyclerViewHolder holder, int position) {
-                ViewBarMenuBinding binding = (ViewBarMenuBinding) holder.getBinding();
-                binding.setModel(getData(position));
-                binding.executePendingBindings();
-            }
-        });
+        RecyclerAdapter adapter = new RecyclerAdapter();
+        adapter.add(R.layout.view_bar_menu, listener, bar.getMoreList());
+        recyclerView.setAdapter(adapter);
+
         recyclerView.setBackgroundColor(bar.getBgColorMore());
         recyclerView.setAlpha(alpha <= 0 ? 0.8f : alpha);
         return recyclerView;
     }
+
+    private OnBindDataListener<Menu> listener = new OnBindDataListener<Menu>() {
+        @Override
+        public void onBindData(RecyclerViewHolder holder, int position, Menu menu) {
+            ViewBarMenuBinding binding = (ViewBarMenuBinding) holder.getBinding();
+            binding.setModel(menu);
+            binding.executePendingBindings();
+        }
+    };
 
 }
