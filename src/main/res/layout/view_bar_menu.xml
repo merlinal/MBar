@@ -75,7 +75,6 @@
             android:background="@drawable/bg_notice_number"
             android:gravity="center"
             android:text="@{model.notice}"
-            android:textColor="@color/light"
             android:textSize="6sp"
             android:visibility="@{model.isNotice() &amp;&amp; !ValiUtil.isBlank(model.notice) ? View.VISIBLE : View.GONE}" />
     </LinearLayout>
