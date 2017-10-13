@@ -1,6 +1,6 @@
 package com.merlin.view.bar;
 
-import com.merlin.core.util.Util;
+import com.merlin.core.util.MUtil;
 import com.merlin.view.bar.model.Bar;
 import com.merlin.view.bar.model.Menu;
 
@@ -62,8 +62,7 @@ public class BarConfig {
         return new IBarConfig() {
             @Override
             public Menu left() {
-                return getMenu().type(Bar.TYPE_LEFT)
-                        .iconId(R.drawable.back_white);
+                return getMenu().type(Bar.TYPE_LEFT).iconId(R.drawable.back_white);
             }
 
             @Override
@@ -88,7 +87,7 @@ public class BarConfig {
 
             @Override
             public int bgColorBar() {
-                return Util.color(R.color.primary);
+                return MUtil.color(R.color.primary);
             }
 
             @Override
@@ -100,10 +99,10 @@ public class BarConfig {
 
     private Menu getMenu() {
         return Menu.newInst()
-                .textColor(Util.color(R.color.white))
-                .textSize(Util.dimen(R.dimen.font_normal))
-                .descColor(Util.color(R.color.white))
-                .descSize(Util.dimen(R.dimen.font_small))
+                .textColor(MUtil.color(R.color.white))
+                .textSize(MUtil.dimen(R.dimen.font_normal))
+                .descColor(MUtil.color(R.color.white))
+                .descSize(MUtil.dimen(R.dimen.font_small))
                 .isNotice(false);
     }
 

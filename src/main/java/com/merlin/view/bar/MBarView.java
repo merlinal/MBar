@@ -8,16 +8,12 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
-import com.merlin.core.context.AppContext;
-import com.merlin.core.network.NetWorkListener;
-import com.merlin.core.network.NetWorkType;
+import com.merlin.core.util.MUtil;
+import com.merlin.core.util.MVerify;
 import com.merlin.core.util.UiUtil;
-import com.merlin.core.util.Util;
-import com.merlin.core.util.ValiUtil;
 import com.merlin.view.bar.databinding.ViewBarBinding;
 import com.merlin.view.bar.databinding.ViewBarMenuBinding;
 import com.merlin.view.bar.model.Bar;
@@ -31,7 +27,7 @@ import com.merlin.view.recycler.adapter.RecyclerAdapter;
  * Created by ncm on 2017/4/12.
  */
 
-public class MBarView extends RelativeLayout implements NetWorkListener {
+public class MBarView extends RelativeLayout {
 
     public MBarView(Context context) {
         super(context);
@@ -50,15 +46,9 @@ public class MBarView extends RelativeLayout implements NetWorkListener {
     private Bar bar;
 
     @Override
-    public void onNetWorkChanged(NetWorkType type) {
-        bar.setTitle(type.name());
-    }
-
-    @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
         binding = DataBindingUtil.bind(this);
-        AppContext.inst().addNetWorkListener(this);
     }
 
     public void apply(Bar bar) {
@@ -76,7 +66,7 @@ public class MBarView extends RelativeLayout implements NetWorkListener {
     }
 
     public void showMoreTopMiddle() {
-        showMore(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT,
+        showMore(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT,
                 0, getBottom(), Gravity.TOP | Gravity.CENTER, true, 0);
     }
 
@@ -92,33 +82,24 @@ public class MBarView extends RelativeLayout implements NetWorkListener {
     }
 
     public void showMore(int width, int height, int x, int y, int gravity, boolean cancelable, float alpha) {
-        if (ValiUtil.isEmpty(bar.getMoreList())) {
+        if (MVerify.isEmpty(bar.more())) {
             return;
         }
         if (moreDialog == null) {
-            moreDialog = UiUtil.showDialog(getContext(), getMenuMoreView(alpha), width, height, x, y, 0, R.style.anim_alpha_scale, gravity, cancelable);
+            moreDialog = UiUtil.showDialog(getContext(), getMenuMoreView(alpha), width, height, x, y, 0, R.style.anim_from_bottom, gravity, cancelable);
         } else {
-            Window window = moreDialog.getWindow();
-            if (gravity != 0) {
-                window.setGravity(gravity);  //此处可以设置dialog显示的位置
-            }
-            WindowManager.LayoutParams params = window.getAttributes();
-            params.x = x;
-            params.y = y;
-            moreDialog.getWindow().setAttributes(params);
             moreDialog.show();
         }
     }
 
     private View getMenuMoreView(float alpha) {
         MRecyclerView recyclerView = new MRecyclerView(getContext());
+        recyclerView.setOverScrollMode(View.OVER_SCROLL_NEVER);
         recyclerView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        recyclerView.set(MRecyclerView.MODE_LIST, LinearLayoutManager.VERTICAL, 0, Util.dp2px(1), 0, 0, 0xffffffff);
+        recyclerView.set(MRecyclerView.MODE_LIST, LinearLayoutManager.VERTICAL, 0, MUtil.dp2px(1), 0, 0, 0xffffffff);
 
-        RecyclerAdapter adapter = new RecyclerAdapter();
-        adapter.add(R.layout.view_bar_menu, listener, bar.getMoreList());
-        recyclerView.setAdapter(adapter);
-
+        RecyclerAdapter adapter = new RecyclerAdapter(true);
+        adapter.add(R.layout.view_bar_menu, listener, bar.more());
         recyclerView.setBackgroundColor(bar.getBgColorMore());
         recyclerView.setAlpha(alpha <= 0 ? 0.8f : alpha);
         return recyclerView;

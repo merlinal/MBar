@@ -1,13 +1,16 @@
 package com.merlin.view.bar.model;
 
-import com.merlin.core.model.BaseModel;
+import android.databinding.BaseObservable;
+
 import com.merlin.view.bar.MenuListener;
+
+import java.io.Serializable;
 
 /**
  * Created by ncm on 2017/4/12.
  */
 
-public class Menu extends BaseModel {
+public class Menu extends BaseObservable implements Serializable {
 
     private Menu() {
     }
