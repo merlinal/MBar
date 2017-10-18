@@ -20,13 +20,14 @@
         android:onClick="@{(view) -> model.listener.onClickMenu(model)}"
         android:orientation="horizontal"
         android:paddingLeft="8dp"
-        android:paddingRight="8dp">
+        android:paddingRight="8dp"
+        android:visibility="@{model.isHide() ? View.GONE : View.VISIBLE}">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:src="@{model.iconId}" />
+            android:src="@{model.iconLeftId}" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -58,23 +59,29 @@
         </LinearLayout>
 
         <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@{model.iconRightId}" />
+
+        <ImageView
             android:layout_width="8dp"
             android:layout_height="8dp"
             android:layout_marginLeft="2dp"
-            android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_notice_number"
             android:gravity="center"
             android:visibility="@{model.isNotice() &amp;&amp; MVerify.isBlank(model.notice) ? View.VISIBLE : View.GONE}" />
 
         <TextView
-            android:layout_width="14dp"
-            android:layout_height="14dp"
-            android:layout_marginRight="2dp"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="2dp"
             android:layout_marginTop="2dp"
             android:background="@drawable/bg_notice_number"
             android:gravity="center"
             android:text="@{model.notice}"
+            android:textColor="#ffffff"
             android:textSize="6sp"
             android:visibility="@{model.isNotice() &amp;&amp; !MVerify.isBlank(model.notice) ? View.VISIBLE : View.GONE}" />
     </LinearLayout>

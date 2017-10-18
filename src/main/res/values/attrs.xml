@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MBarView">
+        <attr name="bgColor" format="color" />
+        <attr name="bgColorPopup" format="color" />
+        <attr name="bgResourcePopup" format="reference" />
+
+        <attr name="left_iconLeft" format="reference" />
+        <attr name="left_iconRight" format="reference" />
+        <attr name="left_text" format="reference" />
+        <attr name="left_textSize" format="dimension" />
+        <attr name="left_textColor" format="color" />
+        <attr name="left_desc" format="reference" />
+        <attr name="left_descSize" format="dimension" />
+        <attr name="left_descColor" format="color" />
+
+        <attr name="middle_iconLeft" format="reference" />
+        <attr name="middle_iconRight" format="reference" />
+        <attr name="middle_text" format="reference" />
+        <attr name="middle_textSize" format="dimension" />
+        <attr name="middle_textColor" format="color" />
+        <attr name="middle_desc" format="reference" />
+        <attr name="middle_descSize" format="dimension" />
+        <attr name="middle_descColor" format="color" />
+
+        <attr name="right_textSize" format="dimension" />
+        <attr name="right_textColor" format="color" />
+        <attr name="right_descSize" format="dimension" />
+        <attr name="right_descColor" format="color" />
+        <attr name="right1_text" format="reference" />
+        <attr name="right1_desc" format="reference" />
+        <attr name="right1_iconLeft" format="reference" />
+        <attr name="right1_iconRight" format="reference" />
+        <attr name="right2_text" format="reference" />
+        <attr name="right2_desc" format="reference" />
+        <attr name="right2_iconLeft" format="reference" />
+        <attr name="right2_iconRight" format="reference" />
+
+        <attr name="more_textSize" format="dimension" />
+        <attr name="more_textColor" format="color" />
+        <attr name="more_descSize" format="dimension" />
+        <attr name="more_descColor" format="color" />
+        <attr name="more_dividerColor" format="color" />
+        <attr name="more_dividerHeight" format="dimension" />
+        <attr name="more_width" format="dimension" />
+        <attr name="more_maxHeight" format="dimension" />
+        <attr name="more_alpha" format="float" />
+        <attr name="more_itemHeight" format="dimension" />
+    </declare-styleable>
+
+
+</resources>

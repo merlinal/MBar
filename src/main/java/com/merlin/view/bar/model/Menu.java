@@ -2,6 +2,8 @@ package com.merlin.view.bar.model;
 
 import android.databinding.BaseObservable;
 
+import com.merlin.core.util.MUtil;
+import com.merlin.core.util.MVerify;
 import com.merlin.view.bar.MenuListener;
 
 import java.io.Serializable;
@@ -28,22 +30,33 @@ public class Menu extends BaseObservable implements Serializable {
     private int descColor;
     private float descSize;
 
-    private int iconId;
-
     private boolean isNotice;
     private String notice;
 
-    private MenuListener listener;
+    private int iconLeftId;
+    private int iconRightId;
 
+    private MenuListener listener;
 
     public static Menu newInst() {
         return new Menu();
     }
 
-    public Menu set(int iconId, String text, int textColor, int textSize, String desc, int descColor, int descSize, boolean isNotice, String notice, MenuListener listener) {
-        iconId(iconId).listener(listener)
-                .text(text).textColor(textColor).textSize(textSize)
-                .desc(desc).descColor(descColor).descSize(descSize)
+    public Menu clone() {
+        return Menu.newInst().set(id, iconLeftId, iconRightId, 0, textColor, textSize,
+                0, descColor, descSize, false, null, listener);
+    }
+
+    public boolean isHide() {
+        return MVerify.isBlank(text) && MVerify.isBlank(desc) && iconLeftId == 0 && iconRightId == 0;
+    }
+
+    public Menu set(long id, int iconLeftId, int iconRightId, int textId, int textColor, float textSize,
+                    int descId, int descColor, float descSize, boolean isNotice, String notice, MenuListener listener) {
+        id(id).listener(listener).
+                iconLeftId(iconLeftId).iconRightId(iconRightId)
+                .textId(textId).textColor(textColor).textSize(textSize)
+                .descId(descId).descColor(descColor).descSize(descSize)
                 .isNotice(isNotice).notice(notice);
         return this;
     }
@@ -53,21 +66,31 @@ public class Menu extends BaseObservable implements Serializable {
         return this;
     }
 
+    public Menu textId(int textId) {
+        if (textId != 0) {
+            this.text = MUtil.string(textId);
+        }
+        return this;
+    }
+
     public Menu text(String text) {
         this.text = text;
         return this;
     }
 
     public Menu textColor(int textColor) {
-        if (textColor != 0) {
-            this.textColor = textColor;
-        }
+        this.textColor = textColor;
         return this;
     }
 
     public Menu textSize(float textSize) {
-        if (textSize != 0) {
-            this.textSize = textSize;
+        this.textSize = textSize;
+        return this;
+    }
+
+    public Menu descId(int descId) {
+        if (descId != 0) {
+            this.desc = MUtil.string(descId);
         }
         return this;
     }
@@ -78,23 +101,22 @@ public class Menu extends BaseObservable implements Serializable {
     }
 
     public Menu descColor(int descColor) {
-        if (descColor != 0) {
-            this.descColor = descColor;
-        }
+        this.descColor = descColor;
         return this;
     }
 
     public Menu descSize(float descSize) {
-        if (descSize != 0) {
-            this.descSize = descSize;
-        }
+        this.descSize = descSize;
         return this;
     }
 
-    public Menu iconId(int iconId) {
-        if (iconId != 0) {
-            this.iconId = iconId;
-        }
+    public Menu iconLeftId(int iconLeftId) {
+        this.iconLeftId = iconLeftId;
+        return this;
+    }
+
+    public Menu iconRightId(int iconRightId) {
+        this.iconRightId = iconRightId;
         return this;
     }
 
@@ -151,10 +173,6 @@ public class Menu extends BaseObservable implements Serializable {
         return descSize;
     }
 
-    public int getIconId() {
-        return iconId;
-    }
-
     public boolean isNotice() {
         return isNotice;
     }
@@ -175,4 +193,11 @@ public class Menu extends BaseObservable implements Serializable {
         return desc;
     }
 
+    public int getIconLeftId() {
+        return iconLeftId;
+    }
+
+    public int getIconRightId() {
+        return iconRightId;
+    }
 }
